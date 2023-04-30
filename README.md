@@ -11,23 +11,27 @@ _Using quantum computing to design a more precise, environmental friendly and ro
 
 https://nyuad.nyu.edu/en/events/2023/april/nyuad-hackathon-event.html
 
+## Presentation
+*The Slides can be viewed at [information](https://www.canva.com/design/DAFheTueBTE/iKTIXVJDEhtiVuoBL80QyA/edit?utm_content=DA%5B%E2%80%A6%5Dm_campaign%3Ddesignshare&utm_medium=link2&utm_source=sharebutton).*
+
+
+
 ## Motivation
 
 ![alt text](https://github.com/qcswat/qatrah/blob/main/img/water.gif)
 
 Solving quantum solution for water based distibution and debugging using quantum computing.
-Buzz words: WDN, Quantum Computing, QUBO, QML, Optimization
+Buzz words: WDN, Quantum Computing, QUBO, QML, Optimization, Pennylane, Jax
 
 **Quantum algorithm**:
 
 - Variational Quantum Eigensolver (VQE)
 - Quantum Approximate Optimization Algorithm (QAOA)
 - Quantum Machine Optimization Algorithm
-- Quantum Machine Learning
+- Quantum Machine Learning on Graph
 
 **Installation Instructions:**
 **_Requirements:_**
-pip3 -r int
 pip3 install -r requirements.txt
 
 \*Conda users, please make sure to `conda install pip` and use it for the above requirements.
@@ -64,6 +68,6 @@ Specifically, we collect the pressure data from the optimally-placed sensors in 
 [Anas](https://github.com/AnasMM19), [Basant](https://github.com/Basant-Elhussein), [Mohammed](https://github.com/Mouhamedaminegarrach), [Airin](https://github.com/Rainiko66), [Lakshika](https://github.com/rathilakshika), [Sanjana](https://github.com/Sanjana-Nambiar), [Selin Doga](https://github.com/selindoga), [Yaser](https://github.com/YaserAlOsh)
 
 **Mentors:**
-[Fouad](https://github.com/fo-ui), [El Amine](https://github.com/qdevpsi3), [Victory](https://github.com/vtomole), [Akash Kant](https://github.com/akashkthkr)
+[Fouad](https://github.com/fo-ui), [El Amine](https://github.com/qdevpsi3), [Victory Omole](https://github.com/vtomole), [Akash Kant](https://github.com/akashkthkr)
 
 And thank you to the oragnising committee of NYUAD 2023 Hackathon https://nyuad.nyu.edu/en/events/2023/april/nyuad-hackathon-event.html and Qbraid and other student who made it possible and great.
