@@ -4,34 +4,39 @@ _Using quantum computing to design a more precise, environmental friendly and ro
 
 [![License]()](https://www.gnu.org/licenses/)
 
-# NYUAD Hackathon for Social Good in the Arab World: Focusing on Quantum Computing (QC) and UN Sustainable Development Goals (SDGs).
+## NYUAD Hackathon for Social Good in the Arab World: Focusing on Quantum Computing (QC) and UN Sustainable Development Goals (SDGs).
 
 https://nyuad.nyu.edu/en/events/2023/april/nyuad-hackathon-event.html
 
 ## Motivation
 
-Solving quantum solution for
+Solving quantum solution for water based distibution and debugging using quantum computing.
+Buzz words: WDN, Quantum Computing, QUBO, QML, Optimization
 
 **Quantum algorithm**:
 
-- Shor's algorithm
-- Grover's search
 - Variational Quantum Eigensolver (VQE)
 - Quantum Approximate Optimization Algorithm (QAOA)
+- Quantum Machine Optimization Algorithm
+- Quantum Machine Learning
 
-**Requirements:**
+**Installation Instructions:**
+**_Requirements:_**
+pip3 -r int
+pip3 install -r requirements.txt
 
-- Install pyqubo using: pip install pyqubo
+\*Conda users, please make sure to `conda install pip` and use it for the above requirements.
 
 **Input to the program:**
 
 - Sensor readings
 - Paths from source to sensor
+- Dataset of the water sample like from DEWA site under paywall
 
 ---
 
 <p align="center">
-  <img width="460" height="460" src="https://github.com/qcswat/qatrah/blob/main/WDN%20animation.gif">
+  <img width="460" height="460" src="https://github.com/qcswat/qatrah/blob/main/WDN_20animation.gif">
 </p>
 
 ## Replacing Classical Pressure Sensors with Optimized Quantum Sensors
