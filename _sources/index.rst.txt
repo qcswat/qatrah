@@ -1,10 +1,15 @@
-NYUAD Hackathon for Social Good in the Arab World: Focusing on Quantum Computing (QC) and UN Sustainable Development Goals (SDGs).
----------------------------------------------------------------------------------------------------------------------------------
+.. image:: logo.jpeg
+  :width: 100
+  
+QatraH | <قطرة>  (Droplet)
+--------------------------
 
 https://nyuad.nyu.edu/en/events/2023/april/nyuad-hackathon-event.html
 
 Motivation
 ----------
+
+.. image:: water.gif
 
 Solving quantum solution for water based distibution and debugging using quantum computing.
 Buzz words: WDN, Quantum Computing, QUBO, QML, Optimization
