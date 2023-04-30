@@ -7,7 +7,7 @@ _Using quantum computing to design a more precise, environmental friendly and ro
 [![License](https://img.shields.io/github/license/Qiskit/qiskit-terra.svg?style=popout-square)](https://www.gnu.org/licenses/) [![](https://img.shields.io/github/release/qcswat/qatrah.svg?style=popout-square)](https://pypi.org/project/qatrah/0.1.0/)
 [![](https://img.shields.io/pypi/dm/qatrah.svg?style=popout-square)](https://pypi.org/project/qatrah/)
 
-[QatraH Website](https://qcswat.github.io/qatrah/)
+[QatraH Website Link](https://qcswat.github.io/qatrah/)
 
 ### NYUAD Hackathon for Social Good in the Arab World: Focusing on Quantum Computing (QC) and UN Sustainable Development Goals (SDGs).
 
