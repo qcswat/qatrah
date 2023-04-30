@@ -45,8 +45,20 @@ Compared to classical pressure sensors, quantum sensors are not invasive. They a
 
 ## Leak Detection and Localization
 
+Leakage in water distribution systems has been a challenge for water management committees. The real-life data collected from the optimal placed sensors, can be used to predict and localise leakage by identifying the deviations of pressure in the network. This task can be done both using QUBO and Quantum Machine Learning based models.
+
 ### Using Quantum Machine Learning
 
 Existing classical literature, suggests the use of machine learning to predict leakage and localise it to a particular pipe using the data from pressure sensors in the WDN at any given point of time. We attempt to solve the same using a quantum machine learning based model.
 
 Specifically, we collect the pressure data from the optimally-placed sensors in a water distribution network to predict leakage in the WDN using a quantum neural network. It is implemented in the Pennylane framework using Jax. The data is fed into the model using Angle encoding. The model is composed of a parametrised quantum circuit with RY, RZ and CNOT gates which are trained over a total of 500 epochs. We use a train to test-set ratio of 4:1 and optimise the model using Rectified adam over the binary cross-entropy loss. At the end we obtain a test accuracy of 87.02% over the dataset of size 650.
+
+## Acknowledgements
+
+**Hackers:**
+[Anas](https://github.com/AnasMM19), [Basant](https://github.com/Basant-Elhussein), [Mohammed](https://github.com/Mouhamedaminegarrach), [Airin](https://github.com/Rainiko66), [Lakshika](https://github.com/rathilakshika), [Sanjana](https://github.com/Sanjana-Nambiar), [Selin Doga](https://github.com/selindoga), [Yaser](https://github.com/YaserAlOsh)
+
+**Mentors:**
+[Fouad](https://github.com/fo-ui), [El Amine](https://github.com/qdevpsi3), [Victory](https://github.com/vtomole), [Akash Kant](https://github.com/akashkthkr)
+
+And thank you to the oragnising committee of NYUAD 2023 Hackathon https://nyuad.nyu.edu/en/events/2023/april/nyuad-hackathon-event.html and Qbraid and other student who made it possible and great.
