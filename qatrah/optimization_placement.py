@@ -16,6 +16,7 @@ from qiskit_optimization.algorithms import GroverOptimizer, MinimumEigenOptimize
 
 
 def convert_oopnet_junctions_to_df(net):
+    """Converts the junctions in an oopnet network to a dataframe"""
     df = pd.DataFrame(columns=["node", "xcoord", "ycoord", "elevation", "demand"])
     for j in on.get_junctions(net):
         df = pd.concat(
@@ -40,6 +41,7 @@ def convert_oopnet_junctions_to_df(net):
 
 
 def convert_oopnet_nodes_to_df(net, default_elevation=0, default_demand=0):
+    """Converts the nodes in an oopnet network to a dataframe"""
     df = pd.DataFrame(columns=["node", "xcoord", "ycoord"])
     for j in on.get_nodes(net):
         df = pd.concat(
@@ -64,6 +66,7 @@ def convert_oopnet_nodes_to_df(net, default_elevation=0, default_demand=0):
 
 
 def get_df_from_oopnet_nodes(net):
+    """Converts the nodes in an oopnet network to a dataframe"""
     nodes = convert_oopnet_nodes_to_df(net)
     junctions = convert_oopnet_junctions_to_df(net)
     nodes = nodes.merge(junctions, on="node", how="outer")
@@ -73,6 +76,7 @@ def get_df_from_oopnet_nodes(net):
 
 
 def convert_oopnet_pipes_to_df(net):
+    """Converts the pipes in an oopnet network to a dataframe"""
     df = pd.DataFrame(
         columns=[
             "id",
@@ -107,17 +111,20 @@ def convert_oopnet_pipes_to_df(net):
 
 
 def drop_y(df):
+    """Drop columns with _y suffix"""
     to_drop = [x for x in df if x.endswith("_y")]
     df.drop(to_drop, axis=1, inplace=True)
 
 
 def rename_x(df):
+    """Rename columns with _x suffix"""
     for col in df:
         if col.endswith("_x"):
             df.rename(columns={col: col.rstrip("_x")}, inplace=True)
 
 
 def create_graph(edges):
+    """Creates a graph from a dataframe of edges"""
     G = nx.from_pandas_edgelist(
         edges,
         "node1",
@@ -129,6 +136,7 @@ def create_graph(edges):
 
 
 def add_attributes(G, nodes):
+    """Adds attributes to a graph from a dataframe of nodes"""
     nx.set_node_attributes(
         G,
         nodes[["xcoord", "node"]].set_index("node", drop=True)["xcoord"].to_dict(),
@@ -156,6 +164,7 @@ def add_attributes(G, nodes):
 
 
 def generate_centrality_factor(G, edges_attr):
+    """Generates the centrality factor for each edge in the graph"""
     bb = nx.edge_betweenness_centrality(G, normalized=True)
     edges_attr["bce"] = 0
     for s, t in bb.keys():
@@ -167,16 +176,19 @@ def generate_centrality_factor(G, edges_attr):
 
 
 def diameter_length_factor(edges_attr):
+    """Generates the diameter-length factor for each edge in the graph"""
     edges_attr["Z"] = edges_attr["length"] / 2 + edges_attr["diameter"] / 2
     return edges_attr
 
 
 def create_edge_weight(edges_attr, A, B):
+    """Creates the edge weight for each edge in the graph"""
     edges_attr["weight"] = A * edges_attr["bce"] + B * edges_attr["Z"]
     return edges_attr
 
 
 def generate_accessibility_factor(edges_attr, P):
+    """Generates the accessibility factor for each edge in the graph"""
     edges_attr["access"] = np.random.choice(
         [0, 1], size=edges_attr.shape[0], p=[1 - P, P]
     )
@@ -184,6 +196,7 @@ def generate_accessibility_factor(edges_attr, P):
 
 
 def plot_network(G, plot_name="Sensors graph"):
+    """Plots the network"""
     edge_x = []
     edge_y = []
     for edge in G.edges():
@@ -264,6 +277,8 @@ def plot_network(G, plot_name="Sensors graph"):
 
 
 class SensorPlacement:
+    """Class for the sensor placement problem"""
+
     REQUIRED_PARAMS = ["nodes", "edge", "nb_sensors"]
 
     def __init__(self, params) -> None:
@@ -400,11 +415,25 @@ class SensorPlacement:
 
 
 class SensorPlacementResults:
+    """
+    A class to manage the results of sensor placement optimization using various algorithms.
+
+    Attributes:
+        _results (Any): The results of the optimization.
+    """
+
     def __init__(self, results: Any) -> None:
+        """
+        Initializes the SensorPlacementResults object with the given results.
+
+        Args:
+            results (Any): The optimization results.
+        """
         self._results: Any = results
 
     @property
     def results(self) -> Any:
+        """Returns the optimization results."""
         return self._results
 
     def _run_gate_based_opt(
@@ -412,7 +441,18 @@ class SensorPlacementResults:
         quantum_instance: Optional[QuantumInstance] = None,
         label: str = "qaoa",
         opt_type: str = "qaoa",
-    ) -> SensorPlacementResults:
+    ) -> "SensorPlacementResults":
+        """
+        Runs a gate-based optimization algorithm (QAOA or VQE) to solve the sensor placement problem.
+
+        Args:
+            quantum_instance (Optional[QuantumInstance]): The quantum instance to run the optimization on.
+            label (str, optional): The label for the optimization results. Default is "qaoa".
+            opt_type (str, optional): The type of gate-based optimization algorithm to run. Default is "qaoa".
+
+        Returns:
+            SensorPlacementResults: The optimization results.
+        """
         opt_types = {"qaoa": QAOA, "vqe": VQE}
         quantum_algo = opt_types[opt_type]
 
@@ -447,7 +487,17 @@ class SensorPlacementResults:
 
     def run_qaoa(
         self, quantum_instance: Optional[QuantumInstance] = None, label: str = "qaoa"
-    ) -> SensorPlacementResults:
+    ) -> "SensorPlacementResults":
+        """
+        Runs the QAOA algorithm to solve the sensor placement problem.
+
+        Args:
+            quantum_instance (Optional[QuantumInstance]): The quantum instance to run the optimization on.
+            label (str, optional): The label for the optimization results. Default is "qaoa".
+
+        Returns:
+            SensorPlacementResults: The optimization results.
+        """
         return self._run_gate_based_opt(
             quantum_instance=quantum_instance,
             label=label,
@@ -458,14 +508,33 @@ class SensorPlacementResults:
         self,
         quantum_instance: Optional[QuantumInstance] = None,
         label: str = "vqe",
-    ) -> SensorPlacementResults:
+    ) -> "SensorPlacementResults":
+        """
+        Runs the VQE algorithm to solve the sensor placement problem.
+
+        Args:
+            quantum_instance (Optional[QuantumInstance]): The quantum instance to run the optimization on.
+            label (str, optional): The label for the optimization results. Default is "vqe".
+
+        Returns:
+            SensorPlacementResults: The optimization results.
+        """
         return self._run_gate_based_opt(
             quantum_instance=quantum_instance,
             label=label,
             opt_type="vqe",
         )
 
-    def run_classical(self, label: str = "classical") -> SensorPlacementResults:
+    def run_classical(self, label: str = "classical") -> "SensorPlacementResults":
+        """
+        Runs the classical algorithm to solve the sensor placement problem.
+
+        Args:
+            label (str, optional): The label for the optimization results. Default is "classical".
+
+        Returns:
+            SensorPlacementResults: The optimization results.
+        """
         solver = NumPyMinimumEigensolver()
 
         optimizer = MinimumEigenOptimizer(solver)
