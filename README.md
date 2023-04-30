@@ -1,14 +1,20 @@
-# QatraH | قطرة | (Droplet)
+![alt text](https://github.com/qcswat/qatrah/blob/main/img/Qatrah-logos.jpeg?raw=true)
+
+# QatraH | قطرة | (Droplet) [![License]()](https://www.gnu.org/licenses/)
 
 _Using quantum computing to design a more precise, environmental friendly and robust water distribution network and debugging._
 
-[![License]()](https://www.gnu.org/licenses/)
+[![License](https://img.shields.io/github/license/Qiskit/qiskit-terra.svg?style=popout-square)](https://www.gnu.org/licenses/)
+
+[![Site](https://img.shields.io/github/license/Qiskit/qiskit-terra.svg?style=popout-square)](https://qcswat.github.io/qatrah/)
 
 ## NYUAD Hackathon for Social Good in the Arab World: Focusing on Quantum Computing (QC) and UN Sustainable Development Goals (SDGs).
 
 https://nyuad.nyu.edu/en/events/2023/april/nyuad-hackathon-event.html
 
 ## Motivation
+
+![alt text](https://github.com/qcswat/qatrah/blob/main/img/water.gif?raw=true)
 
 Solving quantum solution for water based distibution and debugging using quantum computing.
 Buzz words: WDN, Quantum Computing, QUBO, QML, Optimization
