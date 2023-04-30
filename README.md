@@ -1,4 +1,4 @@
-![alt text](https://github.com/qcswat/qatrah/blob/main/img/Qatrah-logos.jpeg?raw=true)
+![alt text](https://github.com/qcswat/qatrah/blob/main/img/Qatrah-logos.jpeg?raw=true | width=100)
 
 # QatraH | قطرة | (Droplet) [![License]()](https://www.gnu.org/licenses/)
 
@@ -14,7 +14,7 @@ https://nyuad.nyu.edu/en/events/2023/april/nyuad-hackathon-event.html
 
 ## Motivation
 
-![alt text](https://github.com/qcswat/qatrah/blob/main/img/water.gif?raw=true)
+![alt text](https://github.com/qcswat/qatrah/blob/main/img/water.gif?raw=true | width=100)
 
 Solving quantum solution for water based distibution and debugging using quantum computing.
 Buzz words: WDN, Quantum Computing, QUBO, QML, Optimization
