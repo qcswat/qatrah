@@ -55,6 +55,7 @@
     <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Magnetohydrosensor module" href="magnetohydrosensor.html" />
     <link rel="prev" title="Welcome to QatraH&#39;s documentation!" href="../index.html" />
   
    
@@ -185,6 +186,8 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#qml_debugging.loss_fn" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">loss_fn()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#qml_debugging.quantum_circuit" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">quantum_circuit()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#qml_debugging.quantum_layer" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">quantum_layer()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#qml_debugging.update" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">update()</span></code></a>
@@ -200,9 +203,23 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  <section id="module-qml_debugging">
-<span id="debugging-module"></span><h1 id="includes-qml-debugging--page-root">Debugging module<a class="headerlink" href="#includes-qml-debugging--page-root" title="Permalink to this heading">¶</a></h1>
-<dl class="py function">
+  <section id="debugging-module">
+<h1 id="includes-qml-debugging--page-root">Debugging module<a class="headerlink" href="#includes-qml-debugging--page-root" title="Permalink to this heading">¶</a></h1>
+<p>This code implements a hybrid quantum-classical machine learning model for a binary classification task. The model processes input data from pressure sensors, likely for some sort of physical system. The quantum part of the model is a quantum neural network (QNN) that processes the input data using a quantum circuit. The classical part of the model is a feedforward neural network (FNN) with two hidden layers.</p>
+<p>Here's a brief explanation of the code structure:</p>
+<ol class="arabic simple">
+<li><p>Import necessary libraries and tools such as JAX, Haiku, Optax, PennyLane, etc.</p></li>
+<li><p>Load the training and testing data (commented out in the provided code).</p></li>
+<li><p>Define the quantum layer and the entire quantum circuit for the QNN model.</p></li>
+<li><p>Define the forward pass for the quantum model (<cite>qforward</cite>) and the classical model (<cite>cforward</cite>).</p></li>
+<li><p>Initialize the parameters and the optimizer.</p></li>
+<li><p>Define the <cite>loss_fn</cite> function to calculate the loss value between the predicted output and the ground truth.</p></li>
+<li><p>Define the <cite>update</cite> function to update the model parameters based on the gradients calculated.</p></li>
+<li><p>Implement the training loop that iterates through epochs, shuffles the training data, trains the model, and calculates the test accuracy (commented out in the provided code).</p></li>
+<li><p>Test the model and print the test accuracy (commented out in the provided code).</p></li>
+</ol>
+<p>This hybrid quantum-classical model has the potential to leverage the advantages of quantum computing for certain problems while still utilizing classical computing resources for other parts of the model. The training loop, optimizer, and loss function are all handled by the JAX library, which simplifies gradient calculations and model updates. PennyLane is used to create the quantum circuit and integrate it with JAX.</p>
+<span class="target" id="module-qml_debugging"></span><dl class="py function">
 <dt class="sig sig-object py" id="qml_debugging.loss_fn">
 <span class="sig-prename descclassname"><span class="pre">qml_debugging.</span></span><span class="sig-name descname"><span class="pre">loss_fn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qml_debugging.loss_fn" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the loss value between predicted output after a forward pass of the model and the ground truth</p>
@@ -219,6 +236,25 @@
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="qml_debugging.quantum_circuit">
+<span class="sig-prename descclassname"><span class="pre">qml_debugging.</span></span><span class="sig-name descname"><span class="pre">quantum_circuit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">circuit_weights</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qml_debugging.quantum_circuit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds the entire Quantum circuit model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) -- The pressure sensor data to be fed into the model</p></li>
+<li><p><strong>circuit_weights</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) -- Parameters to be fed into the model</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns the expected value of qubit measurement in PauliZ basis</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[float]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -278,6 +314,17 @@
               </div>
             </a>
           
+          
+            <a href="magnetohydrosensor.html" title="Magnetohydrosensor module"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> Magnetohydrosensor module </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
           
         </a>
         

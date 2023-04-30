@@ -11,6 +11,8 @@ Welcome to QatraH's documentation!
    :caption: Contents:
 
    _includes/qml_debugging
+   _includes/magnetohydrosensor
+   _includes/optimization_placement
    
 
 
