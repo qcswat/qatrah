@@ -5,6 +5,8 @@
 _Using quantum computing to design a more precise, environmental friendly and robust water distribution network and debugging._
 
 [![License](https://img.shields.io/github/license/Qiskit/qiskit-terra.svg?style=popout-square)](https://www.gnu.org/licenses/) [![](https://img.shields.io/github/release/qcswat/qatrah.svg?style=popout-square)](https://pypi.org/project/qatrah/0.1.0/)
+[![](https://img.shields.io/pypi/dm/qatrah.svg?style=popout-square)](https://pypi.org/project/qatrah/)
+
 [![](https://img.shields.io/github/page/qcswat/qatrah.svg?style=popout-square)](https://qcswat.github.io/qatrah/)
 
 ## NYUAD Hackathon for Social Good in the Arab World: Focusing on Quantum Computing (QC) and UN Sustainable Development Goals (SDGs).
@@ -12,9 +14,8 @@ _Using quantum computing to design a more precise, environmental friendly and ro
 https://nyuad.nyu.edu/en/events/2023/april/nyuad-hackathon-event.html
 
 ## Presentation
-*The Slides can be viewed at [information](https://www.canva.com/design/DAFheTueBTE/iKTIXVJDEhtiVuoBL80QyA/edit?utm_content=DA%5B%E2%80%A6%5Dm_campaign%3Ddesignshare&utm_medium=link2&utm_source=sharebutton).*
 
-
+_The Slides can be viewed at [information](https://www.canva.com/design/DAFheTueBTE/iKTIXVJDEhtiVuoBL80QyA/edit?utm_content=DA%5B%E2%80%A6%5Dm_campaign%3Ddesignshare&utm_medium=link2&utm_source=sharebutton)._
 
 ## Motivation
 
@@ -41,8 +42,6 @@ pip3 install -r requirements.txt
 - Sensor readings
 - Paths from source to sensor
 - Dataset of the water sample like from DEWA site under paywall
-
----
 
 <p align="center">
   <img width="460" height="460" src="https://github.com/qcswat/qatrah/blob/main/WDN_20animation.gif">
