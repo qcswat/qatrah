@@ -1,6 +1,6 @@
 <a href="url"><img src="https://github.com/qcswat/qatrah/blob/main/img/Qatrah-logos.jpeg" align="left" height="75" width="75" ></a>
 
-# QatraH | قطرة | (Droplet) [![License]()](https://www.gnu.org/licenses/)
+# QatraH | قطرة | (Droplet)
 
 _Using quantum computing to design a more precise, environmental friendly and robust water distribution network and debugging._
 
