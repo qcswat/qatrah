@@ -1,12 +1,11 @@
-![alt text](https://github.com/qcswat/qatrah/blob/main/img/Qatrah-logos.jpeg?raw=true | width=100)
+![alt text](https://github.com/qcswat/qatrah/blob/main/img/Qatrah-logos.jpeg?raw=true)
+<a href="url"><img src="https://github.com/qcswat/qatrah/blob/main/img/Qatrah-logos.jpeg" align="left" height="48" width="48" ></a>
 
 # QatraH | قطرة | (Droplet) [![License]()](https://www.gnu.org/licenses/)
 
 _Using quantum computing to design a more precise, environmental friendly and robust water distribution network and debugging._
 
-[![License](https://img.shields.io/github/license/Qiskit/qiskit-terra.svg?style=popout-square)](https://www.gnu.org/licenses/)
-
-[![Site](https://img.shields.io/github/license/Qiskit/qiskit-terra.svg?style=popout-square)](https://qcswat.github.io/qatrah/)
+[![License](https://img.shields.io/github/license/Qiskit/qiskit-terra.svg?style=popout-square)](https://www.gnu.org/licenses/) [![Site](https://img.shields.io/github/license/Qiskit/qiskit-terra.svg?style=popout-square)](https://qcswat.github.io/qatrah/)
 
 ## NYUAD Hackathon for Social Good in the Arab World: Focusing on Quantum Computing (QC) and UN Sustainable Development Goals (SDGs).
 
